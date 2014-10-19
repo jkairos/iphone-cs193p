@@ -6,13 +6,7 @@
 //  Copyright (c) 2014 Stanford University. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Deck.m"
-#import "PlayingCard.m"
-
-@interface PlayingCardDeck : Deck
-
-@end
+#import "PlayingCardDeck.h"
 
 @implementation PlayingCardDeck
 
