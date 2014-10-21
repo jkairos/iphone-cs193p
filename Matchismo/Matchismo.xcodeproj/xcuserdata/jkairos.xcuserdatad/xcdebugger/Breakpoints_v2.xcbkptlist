@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Matchismo/Model/Card.m"
-            timestampString = "435352936.935863"
+            timestampString = "435428423.059871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "-match:"
             landmarkType = "5">
          </BreakpointContent>

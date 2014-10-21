@@ -93,14 +93,12 @@
 		C502098619F2EFA900FF8D4F /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				C531D01B19F2F07E00BBA3EB /* Model */,
-				C502098B19F2EFA900FF8D4F /* AppDelegate.h */,
-				C502098C19F2EFA900FF8D4F /* AppDelegate.m */,
 				C502098E19F2EFA900FF8D4F /* ViewController.h */,
 				C502098F19F2EFA900FF8D4F /* ViewController.m */,
 				C502099119F2EFAA00FF8D4F /* Main.storyboard */,
 				C502099419F2EFAA00FF8D4F /* Images.xcassets */,
 				C502099619F2EFAA00FF8D4F /* LaunchScreen.xib */,
+				C531D01B19F2F07E00BBA3EB /* Model */,
 				C502098719F2EFA900FF8D4F /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -109,6 +107,8 @@
 		C502098719F2EFA900FF8D4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C502098B19F2EFA900FF8D4F /* AppDelegate.h */,
+				C502098C19F2EFA900FF8D4F /* AppDelegate.m */,
 				C502098819F2EFA900FF8D4F /* Info.plist */,
 				C502098919F2EFA900FF8D4F /* main.m */,
 			);
@@ -376,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Matchismo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -386,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Matchismo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
