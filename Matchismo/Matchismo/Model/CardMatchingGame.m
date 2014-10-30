@@ -7,13 +7,33 @@
 //
 
 #import "CardMatchingGame.h"
+#import "TwoCardMatchMode.h"
+#import "ThreeCardMatchMode.h"
 
 @interface CardMatchingGame()
-@property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;//of Card
+@property (nonatomic,readwrite) NSInteger score;
 @end
 
 @implementation CardMatchingGame
+
+static const int GAME_MODE_2_CARDS=2;
+static const int GAME_MODE_3_CARDS=3;
+
+-(GameModeStrategy* )createGameStrategy:(int) gameStrategy{
+    
+    if(!self.gameModeStrategy){
+        NSLog(@"gameStrategy %d",gameStrategy);
+        if(gameStrategy == GAME_MODE_2_CARDS){
+            self.gameModeStrategy = [[TwoCardMatchMode alloc ] init ];
+        }else if (gameStrategy == GAME_MODE_3_CARDS){
+            self.gameModeStrategy = [[ThreeCardMatchMode alloc ] init ];
+        }
+        
+    }
+    
+    return self.gameModeStrategy;
+}
 
 -(NSMutableArray *) cards{
     if(!_cards){
@@ -22,7 +42,8 @@
     return _cards;
 }
 
--(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck{
+
+-(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck andGameMode:(int) gameMode{
     
     self = [super init];
     
@@ -39,24 +60,27 @@
         }
     }
     
+    [self createGameStrategy:gameMode];
+    
     return self;
 }
-
-static const int MISMATCH_PENALTY=2;
-static const int MATCH_BONUS=4;
-static const int COST_TO_CHOOSE=1;
 
 -(Card *) cardAtIndex:(NSUInteger)index{
     return (index < [self.cards count]) ? [self.cards objectAtIndex:index] : nil;
 }
 
 -(void) chooseCardAtIndex:(NSUInteger)index{
-    Card *card = [self cardAtIndex:index];
+    [self.gameModeStrategy chooseCard:self.cards AtIndex:(index) WithScore:self.score];
+    self.score=[self.gameModeStrategy returnScore];
+
     
-    if(!card.isMatched){
+    /*if(!card.isMatched){
         if (card.isChosen) {
             card.chosen=NO;
         } else {
+            [self createGameStrategy:GAME_MODE_2_CARDS];
+            [self.gameModeStrategy chooseCard:self.cards AtIndex:(index) WithScore:self.score];
+            self.score=[self.gameModeStrategy returnScore];
             //match against other chosen cards
             for (Card *otherCard in self.cards) {
                 if (otherCard.isChosen && !otherCard.isMatched) {
@@ -77,6 +101,6 @@ static const int COST_TO_CHOOSE=1;
             self.score-=COST_TO_CHOOSE;
             card.chosen=YES;
         }
-    }
+    }*/
 }
 @end

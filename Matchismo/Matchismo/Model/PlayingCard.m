@@ -14,7 +14,51 @@
 -(int)match:(NSArray *)otherCards{
     int score = 0;
     
-    if ([otherCards count] == 1) {
+    NSMutableArray *sameRank=[[NSMutableArray alloc] init];
+    NSMutableArray *sameSuit=[[NSMutableArray alloc] init];
+    
+    for (PlayingCard *otherCard in otherCards) {
+         if (otherCard.rank== self.rank) {
+            [sameRank addObject:[NSNumber numberWithBool:YES]];
+            [sameSuit addObject:[NSNumber numberWithBool:NO]];
+        }else if([otherCard.suit isEqualToString:self.suit]){
+            [sameSuit addObject:[NSNumber numberWithBool:YES]];
+            [sameRank addObject:[NSNumber numberWithBool:NO]];
+        }else{
+            [sameSuit addObject:[NSNumber numberWithBool:NO]];
+            [sameRank addObject:[NSNumber numberWithBool:NO]];
+        }
+    }
+    
+    BOOL isAllSameRank=NO;
+    BOOL isAllSameSuit=NO;
+    
+    for (NSNumber *sameRankObj in sameRank) {
+        if ([sameRankObj isEqualToNumber:[NSNumber numberWithBool:YES]]){
+            isAllSameRank=YES;
+        }else{
+            isAllSameRank=NO;
+            break;
+        }
+    }
+    
+    for (NSNumber *sameSuitObj in sameSuit) {
+        if ([sameSuitObj isEqualToNumber:[NSNumber numberWithBool:YES]]){
+            isAllSameSuit=YES;
+        }else{
+            isAllSameSuit=NO;
+            break;
+        }
+    }
+    
+    if(isAllSameRank){
+        score=4;
+    }else if(isAllSameSuit){
+        score=1;
+    }
+    
+    
+    /*if ([otherCards count] == 1) {
         PlayingCard *otherCard=[otherCards firstObject];
         
         if(otherCard.rank == self.rank){
@@ -22,7 +66,7 @@
         }else if ([otherCard.suit isEqualToString:self.suit]){
             score=1;
         }
-    }
+    }*/
     
     return score;
 }
@@ -52,7 +96,7 @@
 }
 
 -(NSString *)suit{
-    return _suit ? _suit : @"?";
+    return _suit ? _suit : @"FF";
 }
 
 -(NSString *)contents{

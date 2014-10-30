@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "Deck.h"
+#import "GameModeStrategy.h"
+
 
 @interface CardMatchingGame : NSObject
 
 //designated initializer
--(instancetype)initWithCardCount:(NSUInteger) count
-                       usingDeck:(Deck *) deck;
+-(instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck andGameMode:(int) gameMode;
+
 -(void) chooseCardAtIndex:(NSUInteger) index;
 
 -(Card *) cardAtIndex:(NSUInteger) index;
 
 @property (nonatomic,readonly) NSInteger score;
+@property (nonatomic,strong) GameModeStrategy* gameModeStrategy;
 @end
