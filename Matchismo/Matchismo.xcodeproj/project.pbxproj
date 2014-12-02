@@ -22,6 +22,7 @@
 		C57B0EEE19FDA18300147972 /* GameModeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = C57B0EED19FDA18300147972 /* GameModeStrategy.m */; };
 		C57B0EF119FDA3C800147972 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C57B0EF019FDA3C800147972 /* CardMatchingGame.m */; };
 		C57B0EF41A01746600147972 /* ThreeCardMatchMode.m in Sources */ = {isa = PBXBuildFile; fileRef = C57B0EF31A01746600147972 /* ThreeCardMatchMode.m */; };
+		C5E5E4841A29F1E40058A081 /* PlayingCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5E4831A29F1E40058A081 /* PlayingCardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		C5D2CC0019F40DAC005BDD25 /* Deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Deck.h; path = Model/Deck.h; sourceTree = "<group>"; };
 		C5D2CC0119F40E04005BDD25 /* PlayingCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayingCard.h; path = Model/PlayingCard.h; sourceTree = "<group>"; };
 		C5D2CC0219F40E4B005BDD25 /* PlayingCardDeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
+		C5E5E4821A29F1E40058A081 /* PlayingCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardViewController.h; sourceTree = "<group>"; };
+		C5E5E4831A29F1E40058A081 /* PlayingCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 		C502098619F2EFA900FF8D4F /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5E4821A29F1E40058A081 /* PlayingCardViewController.h */,
+				C5E5E4831A29F1E40058A081 /* PlayingCardViewController.m */,
 				C502098E19F2EFA900FF8D4F /* ViewController.h */,
 				C502098F19F2EFA900FF8D4F /* ViewController.m */,
 				C502099119F2EFAA00FF8D4F /* Main.storyboard */,
@@ -286,6 +291,7 @@
 				C579DBD719F31B7600ED4B2C /* PlayingCardDeck.m in Sources */,
 				C502098A19F2EFA900FF8D4F /* main.m in Sources */,
 				C531D01F19F2F24900BBA3EB /* Card.m in Sources */,
+				C5E5E4841A29F1E40058A081 /* PlayingCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

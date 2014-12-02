@@ -7,9 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Deck.h"
-#import "PlayingCardDeck.h"
-#import "Card.h"
 #import "CardMatchingGame.h"
 
 @interface ViewController ()
@@ -38,8 +35,8 @@ static const int GAME_MODE_3_CARDS=3;
 }
 
 
--(Deck *) createDeck{
-    return [[PlayingCardDeck alloc] init];
+-(Deck *) createDeck{//abstract
+    return nil;
 }
 
 - (IBAction)gameModeSelection:(UISegmentedControl *)sender {
